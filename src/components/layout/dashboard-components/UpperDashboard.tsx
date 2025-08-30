@@ -9,12 +9,16 @@ import {
   FaUserGraduate,
 } from "react-icons/fa";
 import { Circle } from "lucide-react";
+import { motion } from "framer-motion";
 
 const UpperDashboard = () => {
   return (
-    <div
+    <motion.div
       className="p-4 border flex-1 rounded-lg shadow-[0_0_5px] shadow-black grid gap-6 
       grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      transition={{ duration: 0.6, type: "spring", bounce: 0.5 }}
     >
       {/* Account Progress */}
       <Card className="shadow-md md:col-span-2 lg:col-span-1 lg:row-span-2">
@@ -229,7 +233,7 @@ const UpperDashboard = () => {
           </ul>
         </CardContent>
       </Card>
-    </div>
+    </motion.div>
   );
 };
 

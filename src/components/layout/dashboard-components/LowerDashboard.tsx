@@ -4,11 +4,17 @@ import { CiSearch } from "react-icons/ci";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { IoFilterSharp } from "react-icons/io5";
+import { motion } from "framer-motion";
 import DashboardTable from "./DashboardTable";
 
 export default function LowerDashboard() {
   return (
-    <div className="mt-6 border flex-1 rounded-lg p-4 bg-white shadow-[0_0_5px] shadow-black">
+    <motion.div
+      className="mt-6 border flex-1 rounded-lg p-4 bg-white shadow-[0_0_5px] shadow-black"
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      transition={{ duration: 0.6, type: "spring", bounce: 0.5 }}
+    >
       {/* Header */}
       <div className="flex flex-col items-start justify-between mb-2 border-b">
         <h2 className="text-base font-semibold">My Uploads</h2>
@@ -33,6 +39,6 @@ export default function LowerDashboard() {
 
       {/* Table */}
       <DashboardTable />
-    </div>
+    </motion.div>
   );
 }

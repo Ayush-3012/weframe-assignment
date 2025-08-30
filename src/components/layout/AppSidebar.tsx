@@ -11,6 +11,7 @@ import {
   SidebarMenu,
 } from "../ui/sidebar";
 import SidebarLogo from "../SidebarLogo";
+import { motion } from "framer-motion";
 
 const sideBarItems = [
   { name: "Home", href: "/" },
@@ -26,7 +27,11 @@ const sideBarItems = [
 
 const AppSidebar = () => {
   return (
-    <>
+    <motion.div
+      initial={{ x: -500 }}
+      animate={{ x: 0 }}
+      transition={{ duration: 0.6 }}
+    >
       <Sidebar>
         <SidebarContent className="bg-sky-950 flex flex-col gap-8 justify-between">
           <SidebarGroup>
@@ -56,7 +61,7 @@ const AppSidebar = () => {
           </Button>
         </SidebarContent>
       </Sidebar>
-    </>
+    </motion.div>
   );
 };
 
